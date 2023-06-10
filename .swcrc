@@ -1,5 +1,9 @@
 {
   "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "dynamicImport": true
+    },
     "target": "es5"
   }
 }

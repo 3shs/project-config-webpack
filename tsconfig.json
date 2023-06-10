@@ -1,0 +1,47 @@
+{
+    // TS编译器参数配置
+  "compilerOptions": {
+    //用于解析非相对模块名称的基准目录。
+    "baseUrl": ".",
+    // 指定 ECMAScript 目标版本。在本例中，为 "ES2020"。
+    "target": "ES2020",
+    // 使用 ECMAScript 的 class fields 提案语法，默认为 false。
+    "useDefineForClassFields": true,
+    // 指定模块代码生成方式，在本例中为 "ESNext"，即使用最新的 ECMAScript 版本。
+    "module": "ESNext",
+    // 列出需要包含的库文件，例如 "ES2020", "DOM", "DOM.Iterable"。
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    // 跳过类型声明文件（.d.ts）的类型检查，默认为 false。
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    // 指定模块解析策略，此处为 "bundler"，表示将模块解析交给构建工具处理，如 Webpack 或 Rollup。
+    "moduleResolution": "bundler",
+    // 允许导入 .ts 和 .tsx 文件，可能对一些构建工具有帮助，默认为 false。
+    "allowImportingTsExtensions": true,
+    // 允许导入 .json 文件作为模块，默认为 false。
+    "resolveJsonModule": true,
+    // 确保每个文件都是一个独立模块，适用于诸如 Babel 这类可以对单个文件进行转换的构建工具。
+    "isolatedModules": true,
+    // 在编译过程中不输出生成的代码文件，默认为 false。
+    "noEmit": true,
+    // 指定如何处理 JSX 语法，此处为 "preserve"，表示保留原始 JSX 格式。
+    "jsx": "preserve",
+
+    /* Linting */
+    // 启用所有严格类型检查选项，默认为 false。
+    "strict": true,
+    // 检测并报告未使用的局部变量，默认为 false。
+    "noUnusedLocals": true,
+    // 检测并报告未使用的函数参数，默认为 false。
+    "noUnusedParameters": true,
+    // 防止 switch 语句中 case 穿透（fall-through）的情况，默认为 false。
+    "noFallthroughCasesInSwitch": true,
+    // 设置路径别名。在本例中，@ 代表 src 目录。
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  // 要包含在编译中的文件或文件夹列表，支持 glob 模式，包括 .ts, .d.ts, .tsx 和 .vue 文件。
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+}
