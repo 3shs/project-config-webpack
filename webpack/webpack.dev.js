@@ -7,6 +7,7 @@ const { resolve } = require('path')
 /**
  * @type {Configuration} // 配置提醒
  */
+
 module.exports = {
   mode: 'development',
   entry: './src/main.ts',
@@ -21,6 +22,14 @@ module.exports = {
   },
   module: {
     rules: [
+      // 处理 .css 文件
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
       // 处理 .sass/scss 文件
       {
         test: /\.s[ac]ss$/,
@@ -52,6 +61,21 @@ module.exports = {
           // `.swcrc` can be used to configure swc
           loader: "swc-loader"
         }
+      },
+      // 处理图片
+      {
+        test: /\.(png|svg|jpe?g|gif|webp)$/,
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024, // 小于40kb的图片会被base64处理
+          }
+        }
+      },
+      // 处理字体图标
+      {
+        test: /\.(woff2?|ttf)$/,
+        type: 'asset/resource',
       }
     ]
   },
