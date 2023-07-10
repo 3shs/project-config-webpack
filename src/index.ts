@@ -26,3 +26,5 @@ new MyPromise(() => {
 
 1
 
+2
+
