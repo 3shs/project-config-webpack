@@ -23,6 +23,3 @@ class MyPromise {
 new MyPromise(() => {
   console.log('promise')
 })
-
-
-// 测试git revert
