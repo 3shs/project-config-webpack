@@ -20,6 +20,10 @@ const handleClick = () => {
     user.setName('zs')
   }
 }
+
+1
+
+2
 </script>
 <style lang="scss" scoped>
 .test {
